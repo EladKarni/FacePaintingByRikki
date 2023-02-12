@@ -1,5 +1,6 @@
 .main {
   display: flex;
+  width: 100%;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
@@ -16,6 +17,7 @@
 
 .top {
   flex: 3;
+  width: 100%;
   height: auto;
   justify-content: center;
   text-align: center;
@@ -129,9 +131,9 @@
   padding: 10px;
 }
 
-.otherButton { 
+.otherButton {
   border-radius: 20px;
-  background-color: #89CFF0;
+  background-color: #89cff0;
   color: white;
   padding: 10px;
 }
@@ -146,7 +148,6 @@
 }
 
 .formHeader {
-
   text-align: center;
 }
 
@@ -165,14 +166,14 @@
 }
 
 .bottomIcon {
-  size: '10x';
+  size: "10x";
 }
 
 .formInput {
   border-radius: 20px;
   background-color: white;
   color: grey;
-  margin: 5px
+  margin: 5px;
 }
 
 .formTextArea {
@@ -180,26 +181,34 @@
   background-color: white;
   color: grey;
   width: 100%;
-  margin: 10px
+  margin: 10px;
 }
 
 .form {
   display: flex;
   width: 100%;
   flex-direction: row;
-  margin: 10px
+  margin: 10px;
 }
 .formLeft {
   display: flex;
   flex-direction: column;
   width: 50%;
-  margin: 10px
+  margin: 10px;
 }
 
 .formRight {
   display: flex;
   flex-direction: column;
   width: 50%;
-  margin: 10px
+  margin: 10px;
 }
 
+.video {
+  opacity: 60%;
+  width: 100%;
+}
+
+.logo{
+  background: transparent
+}

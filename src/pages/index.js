@@ -5,6 +5,7 @@ import Accordion from "react-bootstrap/Accordion";
 import Image from "next/image";
 import facepaint from "../Assets/facepaint.jpg";
 import profile from "../Assets/profilepic.jpeg";
+import logo from "../Assets/logo.png";
 import { BsFacebook, BsTwitter, BsYoutube, BsGoogle } from "react-icons/bs";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -20,6 +21,34 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <div className={styles.top}>
+
+          <div className={styles.video}>
+            <video
+              loop
+              autoPlay
+              muted
+              style={{
+                position: "relative",
+                width: "100%",
+                height: "40rem",
+                left: 0,
+                top: 0,
+              }}
+            >
+              <source
+                src={
+                  "https://media.istockphoto.com/id/1152176721/video/face-painting-session.mp4?s=mp4-640x640-is&k=20&c=kM_p8bkmL4zerM9HmG9Ms4Evs1Wf1-31wJmkz836cso="
+                }
+                type="video/mp4"
+              />
+            </video>
+          </div>
+          <Image
+            src={logo}
+
+            width={200}
+            height={200}
+          ></Image>
           <h1> Face Painting By Rikki</h1>
           <p>
             Get Ready to take your costume to a whole new level with these
@@ -272,8 +301,7 @@ export default function Home() {
             </p>
           </div>
 
-
-            <form>
+          <form>
             <div className={styles.form}>
               <div className={styles.formLeft}>
                 <input
@@ -289,10 +317,10 @@ export default function Home() {
                 ></input>
                 <input type="date" className={styles.formInput}></input>
                 <input
-                type="text"
-                placeholder="Event Type"
-                className={styles.formInput}
-              ></input>
+                  type="text"
+                  placeholder="Event Type"
+                  className={styles.formInput}
+                ></input>
               </div>
               <div className={styles.formRight}>
                 <input
@@ -307,21 +335,18 @@ export default function Home() {
                 ></input>
                 <input type="time" className={styles.formInput}></input>
                 <select className={styles.formInput}>
-                <option value="Yes">Yes</option>
-                <option value="No">No</option>
-              </select>
+                  <option value="Yes">Yes</option>
+                  <option value="No">No</option>
+                </select>
               </div>
-
-
-
-
-              </div>
-              <textarea className={styles.formTextArea} placeholder="Message"></textarea>
-            </form>
-
+            </div>
+            <textarea
+              className={styles.formTextArea}
+              placeholder="Message"
+            ></textarea>
+          </form>
         </div>
         <button className={styles.otherButton}>Get in touch</button>
-
       </main>
       <div className={styles.footer}>
         <p>Copyright 2021 Face Painting By Rikki </p>
