@@ -21,18 +21,20 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <div className={styles.top}>
-
-          <div className={styles.video}>
+          <div className={styles.videoContainer}>
             <video
               loop
               autoPlay
               muted
               style={{
-                position: "relative",
+                position: "absolute",
+                opacity: "80%",
                 width: "100%",
-                height: "40rem",
+                height: "100%",
                 left: 0,
                 top: 0,
+          
+                objectFit: "cover",
               }}
             >
               <source
@@ -42,19 +44,16 @@ export default function Home() {
                 type="video/mp4"
               />
             </video>
+            <div className={styles.topContentContainer}>
+              <Image src={logo} width={200} height={200}></Image>
+              <h1> Face Painting By Rikki</h1>
+              <p>
+                Get Ready to take your costume to a whole new level with these
+                spooky, simple, and unique face paint ideas.
+              </p>
+              <button className={styles.button}>Get in Touch</button>
+            </div>
           </div>
-          <Image
-            src={logo}
-
-            width={200}
-            height={200}
-          ></Image>
-          <h1> Face Painting By Rikki</h1>
-          <p>
-            Get Ready to take your costume to a whole new level with these
-            spooky, simple, and unique face paint ideas.
-          </p>
-          <button className={styles.button}>Get in Touch</button>
         </div>
 
         <div className={styles.packages}>

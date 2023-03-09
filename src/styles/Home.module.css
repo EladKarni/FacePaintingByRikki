@@ -4,25 +4,55 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 6rem;
   min-height: 100vh;
-  background: rgb(228, 42, 240);
-  background: linear-gradient(
-    0deg,
-    rgba(228, 42, 240, 1) 0%,
-    rgba(239, 255, 39, 1) 49%,
-    rgba(38, 238, 236, 0.9500175070028011) 100%
-  );
+  background-color: rgba(255, 0, 255, 1)
 }
 
 .top {
-  flex: 3;
   width: 100%;
   height: auto;
   justify-content: center;
   text-align: center;
-  margin: 50px;
+}
+
+.videoContainer {
+  position: relative;
+  width: "100%";
+  height: "100%";
+
+}
+
+.videoContainer::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100px; /* adjust the height to your liking */
+  background-image: linear-gradient(to bottom, rgba(255,0,255,.1), rgba(255,0,255,1));
+}
+
+.button {
+  border-radius: 20px;
+  border-style: none;
+  background-color: #ffd700;
+  color: white;
   padding: 10px;
+}
+
+.button:hover {
+  background-color: #b8860b;
+}
+
+.topContentContainer {
+  position: relative;
+  top: 0;
+  left: 0;
+  margin: 0;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  color: white;
 }
 
 .box {
@@ -30,19 +60,12 @@
   border-style: solid;
   border-width: 0.3px;
   border-color: white;
-  width: 100%;
 }
-.profileContainer {
-  display: flex;
-  flex-direction: row;
-}
+
 
 .packages {
   display: flex;
-  flex: 1;
-  margin: 50px;
-  padding: 10px;
-  width: 100%;
+  flex-wrap: wrap;
   height: auto;
   text-align: center;
   justify-content: center;
@@ -50,6 +73,8 @@
 }
 .packagesLeft {
   display: flex;
+  flex-basis: 0;
+  flex-grow: 1;
   text-align: left;
   justify-content: center;
   align-items: center;
@@ -58,12 +83,17 @@
 }
 
 .packagesCenter {
+  flex-basis: 0;
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
 }
 
 .packagesRight {
+  flex-basis: 0;
+  flex-grow: 1;
   flex-direction: row;
+  
 }
 
 .about {
@@ -73,7 +103,10 @@
   align-items: center;
   margin: 50px;
 }
-
+.profileContainer {
+  display: flex;
+  flex-direction: row;
+}
 .image {
   box-shadow: 0 0 0 10px #fff;
 }
@@ -124,12 +157,7 @@
   border-style: solid;
 }
 
-.button {
-  border-radius: 20px;
-  background-color: #ffd700;
-  color: white;
-  padding: 10px;
-}
+
 
 .otherButton {
   border-radius: 20px;
@@ -204,11 +232,6 @@
   margin: 10px;
 }
 
-.video {
-  opacity: 60%;
-  width: 100%;
-}
-
-.logo{
-  background: transparent
+.logo {
+  background: transparent;
 }
