@@ -5,7 +5,9 @@
   justify-content: space-between;
   align-items: center;
   min-height: 100vh;
-  background-color: rgba(255, 0, 255, 1)
+  background-color: rgba(255, 255, 255, 0.555);
+  font-family: "Marker Felt";
+  color: white;
 }
 
 .top {
@@ -16,20 +18,27 @@
 }
 
 .videoContainer {
+  z-index: 1;
   position: relative;
-  width: "100%";
-  height: "100%";
-
+  width: "150%";
+  height: 100vh;
+  border: none;
 }
 
 .videoContainer::after {
+  z-index: 1;
   content: "";
+  z-index: 1;
   position: absolute;
   left: 0;
   bottom: 0;
   width: 100%;
   height: 100px; /* adjust the height to your liking */
-  background-image: linear-gradient(to bottom, rgba(255,0,255,.1), rgba(255,0,255,1));
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0),
+    rgb(255, 255, 255)
+  );
 }
 
 .button {
@@ -37,6 +46,7 @@
   border-style: none;
   background-color: #ffd700;
   color: white;
+  z-index: 2;
   padding: 10px;
 }
 
@@ -54,66 +64,127 @@
   box-sizing: border-box;
   color: white;
 }
-
-.box {
-  padding: 30px;
-  border-style: solid;
-  border-width: 0.3px;
-  border-color: white;
-}
-
-
-.packages {
-  display: flex;
-  flex-wrap: wrap;
-  height: auto;
-  text-align: center;
-  justify-content: center;
-  flex-direction: row;
-}
-.packagesLeft {
-  display: flex;
-  flex-basis: 0;
-  flex-grow: 1;
-  text-align: left;
+.pinkSection {
+  position: relative;
+  background-image: url("../Assets/ballon.png");
+  background-color: #de68d6df;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0 auto;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  padding: 5px;
+  padding-bottom: 100px; /* to make space for the curved edge */
+}
+
+.packages {
+  margin-top: 70px;
+  margin: 0 auto;
+  margin-bottom: 70px;
+  width: 90%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-items: center;
+}
+
+.packagesLeft {
+  flex: 1;
 }
 
 .packagesCenter {
-  flex-basis: 0;
-  flex-grow: 1;
+  flex: 1;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 
 .packagesRight {
-  flex-basis: 0;
-  flex-grow: 1;
-  flex-direction: row;
-  
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.packageBox {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border-style: solid;
+  border-width: 0.0000001px;
+  border-color: rgb(255, 255, 255);
+}
+
+@media (max-width: 768px) {
+  .packages {
+    flex-direction: column;
+    height: auto;
+    align-content: center;
+  }
+
+  .packagesLeft,
+  .packagesCenter,
+  .packagesRight {
+    width: 100%;
+  }
+
+  .packagesLeft {
+    text-align: center;
+  }
 }
 
 .about {
   display: flex;
-  width: 100%;
+  width: 90%;
   justify-content: center;
-  align-items: center;
+  justify-items: center;
+  align-items: space-between;
   margin: 50px;
 }
-.profileContainer {
-  display: flex;
-  flex-direction: row;
-}
+
 .image {
-  box-shadow: 0 0 0 10px #fff;
+  height: auto;
+  object-fit: cover;
+  clip-path: ellipse(40% 49% at 50% 50%);
 }
 
 .aboutLeft {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 400;
+}
+
+.aboutRight {
+  display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .about {
+    flex-direction: column;
+  }
+
+  .aboutLeft {
+    order: 2;
+    width: 100%;
+  }
+
+  .aboutRight {
+    order: 1;
+    width: 100%;
+  }
+
+  .image {
+    margin-top: 50px;
+  }
 }
 
 .commitment {
@@ -121,19 +192,38 @@
   margin: 5px;
   padding: 5px;
 }
+
+.yellowSection {
+  position: relative;
+  margin: 0 auto;
+  display: flex;
+  width: 100%;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 100;
+  background-color: rgb(219, 197, 2);
+}
+
 .questions {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .accordion {
   width: 90%;
   margin: 10px;
   padding: 5px;
-  background-color: yellow;
+  
 }
 
 .yellow {
-  background-color: yellow;
+  background-color: rgb(210, 173, 10);
 }
+
 .gallery {
   display: flex;
   width: 100%;
@@ -159,11 +249,29 @@
 
 
 
+.blueSection{
+  position: relative;
+  margin: 0 auto;
+  display: flex;
+  width: 100%;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 100;
+  background-color: rgba(16, 165, 215, 0.486);
+}
+
 .otherButton {
   border-radius: 20px;
   background-color: #89cff0;
   color: white;
   padding: 10px;
+}
+
+.profileContainer {
+  display: flex;
+  flex-direction: row;
 }
 
 .bookNow {
@@ -175,27 +283,57 @@
   justify-content: space-around;
 }
 
+.pinkSection2 {
+  position: relative;
+  width: 100%;
+  background-color: #de68d6df;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+}
+
 .formHeader {
   text-align: center;
 }
 
 .form {
   display: flex;
-  width: 100%;
+  width: 60%;
 }
 
 .footer {
   display: flex;
   justify-content: space-around;
+  background-color: #de68d6df;
   border-top: white;
   width: fill;
   border-top-width: 1px;
   border-top-style: solid;
 }
 
+
 .bottomIcon {
-  size: "10x";
+  background-color: babyblue;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  color: white;
 }
+
+.iconContainer {
+
+  display: flex;
+  flex-direction: row;
+
+  justify-content: space-between;
+  justify-items: space-between;
+}
+
 
 .formInput {
   border-radius: 20px;

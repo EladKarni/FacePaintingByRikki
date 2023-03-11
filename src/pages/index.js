@@ -5,6 +5,7 @@ import Accordion from "react-bootstrap/Accordion";
 import Image from "next/image";
 import facepaint from "../Assets/facepaint.jpg";
 import profile from "../Assets/profilepic.jpeg";
+import google from "../Assets/icon-google-reviews.png";
 import logo from "../Assets/logo.png";
 import { BsFacebook, BsTwitter, BsYoutube, BsGoogle } from "react-icons/bs";
 
@@ -33,7 +34,7 @@ export default function Home() {
                 height: "100%",
                 left: 0,
                 top: 0,
-          
+
                 objectFit: "cover",
               }}
             >
@@ -56,242 +57,253 @@ export default function Home() {
           </div>
         </div>
 
-        <div className={styles.packages}>
-          <div className={styles.packagesLeft}>
-            <h1>Our Packages</h1>
+        <div className={styles.pinkSection}>
+          <div className={styles.packages}>
+            <div className={styles.packagesLeft}>
+              <h1>Our Packages</h1>
+            </div>
+
+            <div className={styles.packagesCenter}>
+              <div className={styles.packageBox}>
+                <h1>Full Designs</h1>
+                <p>10-15 Guests per hour</p>
+                <button className={styles.button}>Get in Touch</button>
+              </div>
+
+              <div className={styles.packageBox}>
+                <h1>Holiday Designs</h1>
+                <p>We are open for all holidays</p>
+                <button className={styles.button}>Get in Touch</button>
+              </div>
+            </div>
+
+            <div className={styles.packagesRight}>
+              <div className={styles.packageBox}>
+                <h1>Quick Draw Designs</h1>
+                <p>24-40 Guests per hour</p>
+                <button className={styles.button}>Get in Touch</button>
+              </div>
+
+              <div className={styles.packageBox}>
+                <h1>Glitter Tattoos</h1>
+                <p>10-20 Guests per hour (surcharge)</p>
+                <button className={styles.button}>Get in Touch</button>
+              </div>
+            </div>
           </div>
 
-          <div className={styles.packagesCenter}>
-            <div className={styles.box}>
-              <h1>Full Designs</h1>
-              <p>10-15 Guests per hour</p>
+          <div className={styles.about}>
+            <div className={styles.aboutLeft}>
+              <h1>About Rikki</h1>
+              <p>
+                Rikki began painting faces in 2011 after a friend correctly
+                guessed, "I bet you'd really like face painting!" Since then,
+                Rikki has taken classes, attended painting jams, and learned
+                from more senior painters, all to get where she is today - At
+                your party!
+              </p>
               <button className={styles.button}>Get in Touch</button>
             </div>
-
-            <div className={styles.box}>
-              <h1>Holiday Designs</h1>
-              <p>We are open for all holidays</p>
-              <button className={styles.button}>Get in Touch</button>
+            <div className={styles.aboutRight}>
+              <Image
+                src={facepaint}
+                className={styles.image}
+                height={400}
+                width={400}
+              ></Image>
             </div>
           </div>
 
-          <div className={styles.packagesRight}>
-            <div className={styles.box}>
-              <h1>Quick Draw Designs</h1>
-              <p>24-40 Guests per hour</p>
-              <button className={styles.button}>Get in Touch</button>
-            </div>
-
-            <div className={styles.box}>
-              <h1>Glitter Tattoos</h1>
-              <p>10-20 Guests per hour (surcharge)</p>
-              <button className={styles.button}>Get in Touch</button>
-            </div>
+          <div className={styles.commitment}>
+            <h1>Our Commitment to Safety</h1>
+            <p>
+              Face painting by Rikki staff including Rikki and all artists all
+              have squeaky clean background checks on file, for you and your
+              guests peace of mind. We use industry standard face and body
+              paints whiche are hypoallergenic and includ anti-bacterial agents.
+              EAch painter carriers liability insurance because it's good to be
+              safe. If you ahvce any questions or for more info, please ask.
+            </p>
           </div>
         </div>
 
-        <div className={styles.about}>
-          <div className={styles.aboutLeft}>
-            <h1>About Rikki</h1>
-            <p>
-              Rikki began painting faces in 2011 after a friend correctly
-              guessed, "I bet you'd really like face painting!" Since then,
-              Rikki has taken classes, attended painting jams, and learned from
-              more senior painters, all to get where she is today - At your
-              party!
-            </p>
+        <div className={styles.yellowSection}>
+          <div className={styles.questions}>
+            <h1>FAQS</h1>
+            <Accordion className={styles.accordion}>
+              <Accordion.Item eventKey="0" className={styles.yellow}>
+                <Accordion.Header className={styles.yellow}>
+                  What kinds of paints do you use?
+                </Accordion.Header>
+                <Accordion.Body className={styles.yellow}>
+                  Rikki and her artists use high-quality industry standard face
+                  abd body paints which are hypoallergenic and include
+                  antobacterial agents. If a guest has very sensitive skin,
+                  please ask for a swatch test at the beginning of the event
+                </Accordion.Body>
+              </Accordion.Item>
+              <Accordion.Item className={styles.yellow} eventKey="1">
+                <Accordion.Header>Who is coming to paint?</Accordion.Header>
+                <Accordion.Body>
+                  Rikki is the lead painter, and she has a small stable of
+                  painters hand picked who work up to her standards. You will
+                  know who your painter is before your event
+                </Accordion.Body>
+              </Accordion.Item>
+              <Accordion.Item className={styles.yellow} eventKey="2">
+                <Accordion.Header>How much does it cost?</Accordion.Header>
+                <Accordion.Body className={styles.yellow}>
+                  Due to the many details involved in the event entertainment,
+                  individual quoptes are provided for each client. Please
+                  contact Rikki using the form below for your quote.
+                </Accordion.Body>
+              </Accordion.Item>
+            </Accordion>
+          </div>
+
+          <div className={styles.gallery}>
+            <h1>Gallery</h1>
+
+            <div className={styles.photos}>
+              <div>
+                <Image
+                  src={facepaint}
+                  width={200}
+                  height={200}
+                  className={styles.galleryImage}
+                  sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
+                ></Image>
+              </div>
+
+              <div>
+                <Image
+                  src={facepaint}
+                  width={200}
+                  height={200}
+                  className={styles.galleryImage}
+                  sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
+                ></Image>
+              </div>
+
+              <div>
+                <Image
+                  src={facepaint}
+                  width={200}
+                  height={200}
+                  className={styles.galleryImage}
+                  sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
+                ></Image>
+              </div>
+            </div>
+            <button className={styles.button}>View more</button>
+          </div>
+        </div>
+
+        <div className={styles.blueSection}>
+          <div className={styles.packages}>
+            <div className={styles.packagesLeft}>
+              <div className={styles.packageBox}>
+                <h1>Reviews</h1>
+                <Image src={google} height={50}></Image>
+                <h2>Top Rated!</h2>
+
+                <button className={styles.otherButton}>
+                  <BsGoogle /> Add a review
+                </button>
+              </div>
+              <div className={styles.packageBox}>
+                <p>
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi u"
+                </p>
+                <div className={styles.profileContainer}>
+                  <Image
+                    src={profile}
+                    width={50}
+                    height={50}
+                    className={styles.galleryImage}
+                    sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
+                  ></Image>
+                  <p>client name</p>
+                </div>
+              </div>
+            </div>
+
+            <div className={styles.packagesRight}>
+              <div className={styles.packageBox}>
+                <p>
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi u"
+                </p>
+                <div className={styles.profileContainer}>
+                  <Image
+                    src={profile}
+                    width={50}
+                    height={50}
+                    className={styles.galleryImage}
+                    sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
+                  ></Image>
+                  <p>client name</p>
+                </div>
+              </div>
+
+              <div className={styles.packageBox}>
+                <p>
+                  " Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi u"
+                </p>
+                <div className={styles.profileContainer}>
+                  <Image
+                    src={profile}
+                    width={50}
+                    height={50}
+                    className={styles.galleryImage}
+                    sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
+                  ></Image>
+                  <p>client name</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div styles={styles.bookNow}>
+            <h1>Book Now</h1>
+
+            <div className={styles.bookNow}>
+              <h2>Parties</h2>
+              <h2>Sports Events</h2>
+              <h2>Unique Twist</h2>
+            </div>
+
+
+
             <button className={styles.button}>Get in Touch</button>
           </div>
-          <div className={styles.aboutRight}>
-            <Image
-              src={facepaint}
-              width={200}
-              height={200}
-              className={styles.image}
-              sizes="(max-width: 768px) 100vw,
-              (max-width: 1200px) 50vw,
-              33vw"
-            ></Image>
-          </div>
         </div>
 
-        <div className={styles.commitment}>
-          <h1>Our Commitment to Safety</h1>
-          <p>
-            Face painting by Rikki staff including Rikki and all artists all
-            have squeaky clean background checks on file, for you and your
-            guests peace of mind. We use industry standard face and body paints
-            whiche are hypoallergenic and includ anti-bacterial agents. EAch
-            painter carriers liability insurance because it's good to be safe.
-            If you ahvce any questions or for more info, please ask.
-          </p>
-        </div>
 
-        <div className={styles.questions}>
-          <Accordion className={styles.accordion}>
-            <Accordion.Item eventKey="0" className={styles.yellow}>
-              <Accordion.Header className={styles.yellow}>
-                What kinds of paints do you use?
-              </Accordion.Header>
-              <Accordion.Body className={styles.yellow}>
-                Rikki and her artists use high-quality industry standard face
-                abd body paints which are hypoallergenic and include
-                antobacterial agents. If a guest has very sensitive skin, please
-                ask for a swatch test at the beginning of the event
-              </Accordion.Body>
-            </Accordion.Item>
-            <Accordion.Item eventKey="1">
-              <Accordion.Header>Who is coming to paint?</Accordion.Header>
-              <Accordion.Body>
-                Rikki is the lead painter, and she has a small stable of
-                painters hand picked who work up to her standards. You will know
-                who your painter is before your event
-              </Accordion.Body>
-            </Accordion.Item>
-            <Accordion.Item eventKey="2">
-              <Accordion.Header>How much does it cost?</Accordion.Header>
-              <Accordion.Body>
-                Due to the many details involved in the event entertainment,
-                individual quoptes are provided for each client. Please contact
-                Rikki using the form below for your quote.
-              </Accordion.Body>
-            </Accordion.Item>
-          </Accordion>
-        </div>
+        
 
-        <div className={styles.gallery}>
-          <h1>Gallery</h1>
 
-          <div className={styles.photos}>
-            <div>
-              <Image
-                src={facepaint}
-                width={200}
-                height={200}
-                className={styles.galleryImage}
-                sizes="(max-width: 768px) 100vw,
-              (max-width: 1200px) 50vw,
-              33vw"
-              ></Image>
-            </div>
-
-            <div>
-              <Image
-                src={facepaint}
-                width={200}
-                height={200}
-                className={styles.galleryImage}
-                sizes="(max-width: 768px) 100vw,
-              (max-width: 1200px) 50vw,
-              33vw"
-              ></Image>
-            </div>
-
-            <div>
-              <Image
-                src={facepaint}
-                width={200}
-                height={200}
-                className={styles.galleryImage}
-                sizes="(max-width: 768px) 100vw,
-              (max-width: 1200px) 50vw,
-              33vw"
-              ></Image>
-            </div>
-          </div>
-          <button className={styles.button}>View more</button>
-        </div>
-
-        <div className={styles.packages}>
-          <div className={styles.packagesLeft}>
-            <div className={styles.box}>
-              <h1>Reviews</h1>
-              <p>Top Rated!</p>
-
-              <button className={styles.otherButton}>
-                <BsGoogle /> Add a review
-              </button>
-            </div>
-            <div className={styles.box}>
-              <h1>"</h1>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi u
-              </p>
-              <div className={styles.profileContainer}>
-                <Image
-                  src={profile}
-                  width={50}
-                  height={50}
-                  className={styles.galleryImage}
-                  sizes="(max-width: 768px) 100vw,
-              (max-width: 1200px) 50vw,
-              33vw"
-                ></Image>
-                <p>client name</p>
-              </div>
-            </div>
-          </div>
-
-          <div className={styles.packagesRight}>
-            <div className={styles.box}>
-              <h1>"</h1>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi u
-              </p>
-              <div className={styles.profileContainer}>
-                <Image
-                  src={profile}
-                  width={50}
-                  height={50}
-                  className={styles.galleryImage}
-                  sizes="(max-width: 768px) 100vw,
-              (max-width: 1200px) 50vw,
-              33vw"
-                ></Image>
-                <p>client name</p>
-              </div>
-            </div>
-
-            <div className={styles.box}>
-              <h1>"</h1>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi u
-              </p>
-              <div className={styles.profileContainer}>
-                <Image
-                  src={profile}
-                  width={50}
-                  height={50}
-                  className={styles.galleryImage}
-                  sizes="(max-width: 768px) 100vw,
-              (max-width: 1200px) 50vw,
-              33vw"
-                ></Image>
-                <p>client name</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <h1>Book Now</h1>
-
-        <div className={styles.bookNow}>
-          <h2>Parties</h2>
-          <h2>Sports Events</h2>
-          <h2>Unique Twist</h2>
-        </div>
-        <button className={styles.button}>Get in Touch</button>
-
-        <div>
+        <div className={styles.pinkSection2}>
           <div className={styles.formHeader}>
             <h1>Get In Touch</h1>
             <p>
@@ -344,12 +356,17 @@ export default function Home() {
               placeholder="Message"
             ></textarea>
           </form>
+          <button className={styles.otherButton}>Get in touch</button>
+
         </div>
-        <button className={styles.otherButton}>Get in touch</button>
+
+
+
+
       </main>
       <div className={styles.footer}>
         <p>Copyright 2021 Face Painting By Rikki </p>
-        <div>
+        <div className={styles.iconContainer}>
           <BsFacebook className={styles.bottomIcon} />
           <BsTwitter className={styles.bottomIcon} />
           <BsYoutube className={styles.bottomIcon} />
