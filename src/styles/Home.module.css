@@ -248,6 +248,8 @@
 .galleryImage {
   border-radius: 100px;
   border-style: solid;
+  max-width: 100%;
+  height: auto;
 }
 
 
