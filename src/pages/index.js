@@ -9,7 +9,8 @@ import google from "../Assets/icon-google-reviews.png";
 import logo from "../Assets/logo.png";
 import { BsFacebook, BsTwitter, BsYoutube, BsGoogle } from "react-icons/bs";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"] })
+
 
 export default function Home() {
   return (
