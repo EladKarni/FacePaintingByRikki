@@ -9,8 +9,7 @@ import google from "../Assets/icon-google-reviews.png";
 import logo from "../Assets/logo.png";
 import { BsFacebook, BsTwitter, BsYoutube, BsGoogle } from "react-icons/bs";
 
-const inter = Inter({ subsets: ["latin"] })
-
+const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
@@ -207,102 +206,98 @@ export default function Home() {
         </div>
 
         <div className={styles.blueSection}>
-          <div className={styles.packages}>
-            <div className={styles.packagesLeft}>
-              <div className={styles.packageBox}>
-                <h1>Reviews</h1>
-                <Image src={google} height={50}></Image>
-                <h2>Top Rated!</h2>
+          <div className={styles.reviewSection}>
+            <h1>Reviews</h1>
+            <div className={styles.reviews}>
+              <div className={styles.reviewsLeft}>
+                <div className={styles.reviewBox}>
+                  <Image src={google} height={50}></Image>
+                  <h2>Top Rated!</h2>
 
-                <button className={styles.otherButton}>
-                  <BsGoogle /> Add a review
-                </button>
-              </div>
-              <div className={styles.packageBox}>
-                <p>
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi u"
-                </p>
-                <div className={styles.profileContainer}>
-                  <Image
-                    src={profile}
-                    width={50}
-                    height={50}
-                    className={styles.galleryImage}
-                    sizes="(max-width: 768px) 100vw,
-              (max-width: 1200px) 50vw,
-              33vw"
-                  ></Image>
-                  <p>client name</p>
+                  <button className={styles.otherButton}>
+                    <BsGoogle /> Add a review
+                  </button>
                 </div>
-              </div>
-            </div>
-
-            <div className={styles.packagesRight}>
-              <div className={styles.packageBox}>
-                <p>
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi u"
-                </p>
-                <div className={styles.profileContainer}>
-                  <Image
-                    src={profile}
-                    width={50}
-                    height={50}
-                    className={styles.galleryImage}
-                    sizes="(max-width: 768px) 100vw,
+                <div className={styles.reviewBox}>
+                  <p>
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi u"
+                  </p>
+                  <div className={styles.profileContainer}>
+                    <Image
+                      src={profile}
+                      width={50}
+                      height={50}
+                      className={styles.galleryImage}
+                      sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
               33vw"
-                  ></Image>
-                  <p>client name</p>
+                    ></Image>
+                    <p>client name</p>
+                  </div>
                 </div>
               </div>
 
-              <div className={styles.packageBox}>
-                <p>
-                  " Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi u"
-                </p>
-                <div className={styles.profileContainer}>
-                  <Image
-                    src={profile}
-                    width={50}
-                    height={50}
-                    className={styles.galleryImage}
-                    sizes="(max-width: 768px) 100vw,
+              <div className={styles.reviewRight}>
+                <div className={styles.reviewBox}>
+                  <p>
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi u"
+                  </p>
+                  <div className={styles.profileContainer}>
+                    <Image
+                      src={profile}
+                      width={50}
+                      height={50}
+                      className={styles.galleryImage}
+                      sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
               33vw"
-                  ></Image>
-                  <p>client name</p>
+                    ></Image>
+                    <p>client name</p>
+                  </div>
+                </div>
+
+                <div className={styles.reviewBox}>
+                  <p>
+                    " Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi u"
+                  </p>
+                  <div className={styles.profileContainer}>
+                    <Image
+                      src={profile}
+                      width={50}
+                      height={50}
+                      className={styles.galleryImage}
+                      sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
+                    ></Image>
+                    <p>client name</p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <div styles={styles.bookNow}>
+          <div className={styles.bookNow}>
             <h1>Book Now</h1>
 
-            <div className={styles.bookNow}>
+            <div className={styles.bookNowRow}>
               <h2>Parties</h2>
               <h2>Sports Events</h2>
               <h2>Unique Twist</h2>
             </div>
 
-
-
             <button className={styles.button}>Get in Touch</button>
           </div>
         </div>
-
-
-        
-
 
         <div className={styles.pinkSection2}>
           <div className={styles.formHeader}>
@@ -358,12 +353,7 @@ export default function Home() {
             ></textarea>
           </form>
           <button className={styles.otherButton}>Get in touch</button>
-
         </div>
-
-
-
-
       </main>
       <div className={styles.footer}>
         <p>Copyright 2021 Face Painting By Rikki </p>
