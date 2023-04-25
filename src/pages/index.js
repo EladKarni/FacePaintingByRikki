@@ -115,14 +115,16 @@ export default function Home() {
           </div>
 
           <div className={styles.commitment}>
-            <h1>Our Commitment to Safety</h1>
+            <h1 className={styles.commitmentHeader}>
+              Our Commitment to Safety
+            </h1>
             <p>
               Face painting by Rikki staff including Rikki and all artists all
               have squeaky clean background checks on file, for you and your
               guests peace of mind. We use industry standard face and body
               paints whiche are hypoallergenic and includ anti-bacterial agents.
-              EAch painter carriers liability insurance because it's good to be
-              safe. If you ahvce any questions or for more info, please ask.
+              Each painter carriers liability insurance because it's good to be
+              safe. If you have any questions or for more info, please ask.
             </p>
           </div>
         </div>
@@ -131,18 +133,18 @@ export default function Home() {
           <div className={styles.questions}>
             <h1>FAQS</h1>
             <Accordion className={styles.accordion}>
-              <Accordion.Item eventKey="0" className={styles.yellow}>
-                <Accordion.Header className={styles.yellow}>
+              <Accordion.Item eventKey="0">
+                <Accordion.Header>
                   What kinds of paints do you use?
                 </Accordion.Header>
-                <Accordion.Body className={styles.yellow}>
+                <Accordion.Body>
                   Rikki and her artists use high-quality industry standard face
                   abd body paints which are hypoallergenic and include
                   antobacterial agents. If a guest has very sensitive skin,
                   please ask for a swatch test at the beginning of the event
                 </Accordion.Body>
               </Accordion.Item>
-              <Accordion.Item className={styles.yellow} eventKey="1">
+              <Accordion.Item eventKey="1">
                 <Accordion.Header>Who is coming to paint?</Accordion.Header>
                 <Accordion.Body>
                   Rikki is the lead painter, and she has a small stable of
@@ -150,9 +152,9 @@ export default function Home() {
                   know who your painter is before your event
                 </Accordion.Body>
               </Accordion.Item>
-              <Accordion.Item className={styles.yellow} eventKey="2">
+              <Accordion.Item eventKey="2">
                 <Accordion.Header>How much does it cost?</Accordion.Header>
-                <Accordion.Body className={styles.yellow}>
+                <Accordion.Body>
                   Due to the many details involved in the event entertainment,
                   individual quoptes are provided for each client. Please
                   contact Rikki using the form below for your quote.
@@ -309,38 +311,37 @@ export default function Home() {
           </div>
 
           <form>
-            <div className={styles.form}>
+            <div className={styles.formContainer}>
               <div className={styles.formLeft}>
                 <input
                   type="text"
                   placeholder="Name"
                   className={styles.formInput}
-                ></input>
-
+                />
                 <input
                   type="text"
                   placeholder="Phone"
                   className={styles.formInput}
-                ></input>
-                <input type="date" className={styles.formInput}></input>
+                />
+                <input type="date" className={styles.formInput} />
                 <input
                   type="text"
                   placeholder="Event Type"
                   className={styles.formInput}
-                ></input>
+                />
               </div>
               <div className={styles.formRight}>
                 <input
                   type="text"
                   placeholder="Email"
                   className={styles.formInput}
-                ></input>
+                />
                 <input
                   type="text"
                   placeholder="Neighborhood or town"
                   className={styles.formInput}
-                ></input>
-                <input type="time" className={styles.formInput}></input>
+                />
+                <input type="time" className={styles.formInput} />
                 <select className={styles.formInput}>
                   <option value="Yes">Yes</option>
                   <option value="No">No</option>
@@ -352,6 +353,7 @@ export default function Home() {
               placeholder="Message"
             ></textarea>
           </form>
+
           <button className={styles.otherButton}>Get in touch</button>
         </div>
       </main>
