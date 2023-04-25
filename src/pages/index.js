@@ -1,4 +1,5 @@
 import Head from "next/head";
+import React, {useState} from "react";
 import { Inter } from "@next/font/google";
 import styles from "@/styles/Home.module.css";
 import Accordion from "react-bootstrap/Accordion";
@@ -12,13 +13,34 @@ import { BsFacebook, BsTwitter, BsYoutube, BsGoogle } from "react-icons/bs";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
-
   function scrollToForm() {
-    const form = document.querySelector('#contact-form');
-    form.scrollIntoView({ behavior: 'smooth' });
+    const form = document.querySelector("#contact-form");
+    form.scrollIntoView({ behavior: "smooth" });
   }
 
-  
+  const [name, setName] = useState('');
+  const [phone, setPhone] = useState('');
+  const [date, setDate] = useState('');
+  const [eventType, setEventType] = useState('');
+  const [email, setEmail] = useState('');
+  const [location, setLocation] = useState('');
+  const [time, setTime] = useState('');
+  const [textOk, setTextOk] = useState('Yes');
+  const [message, setMessage] = useState('');
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const res = await fetch('/api/send-email', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ name, phone, date, eventType, email, location, time, textOk, message }),
+    });
+    const data = await res.json();
+    console.log(data.message);
+  };
+
   return (
     <>
       <Head>
@@ -59,7 +81,9 @@ export default function Home() {
                 Get Ready to take your costume to a whole new level with these
                 spooky, simple, and unique face paint ideas.
               </p>
-              <button className={styles.button} onClick={scrollToForm}>Get in Touch</button>
+              <button className={styles.button} onClick={scrollToForm}>
+                Get in Touch
+              </button>
             </div>
           </div>
         </div>
@@ -74,13 +98,17 @@ export default function Home() {
               <div className={styles.packageBox}>
                 <h1>Full Designs</h1>
                 <p>10-15 Guests per hour</p>
-                <button className={styles.button} onClick={scrollToForm}>Get in Touch</button>
+                <button className={styles.button} onClick={scrollToForm}>
+                  Get in Touch
+                </button>
               </div>
 
               <div className={styles.packageBox}>
                 <h1>Holiday Designs</h1>
                 <p>We are open for all holidays</p>
-                <button className={styles.button} onClick={scrollToForm}>Get in Touch</button>
+                <button className={styles.button} onClick={scrollToForm}>
+                  Get in Touch
+                </button>
               </div>
             </div>
 
@@ -88,13 +116,17 @@ export default function Home() {
               <div className={styles.packageBox}>
                 <h1>Quick Draw Designs</h1>
                 <p>24-40 Guests per hour</p>
-                <button className={styles.button} onClick={scrollToForm}>Get in Touch</button>
+                <button className={styles.button} onClick={scrollToForm}>
+                  Get in Touch
+                </button>
               </div>
 
               <div className={styles.packageBox}>
                 <h1>Glitter Tattoos</h1>
                 <p>10-20 Guests per hour (surcharge)</p>
-                <button className={styles.button} onClick={scrollToForm}>Get in Touch</button>
+                <button className={styles.button} onClick={scrollToForm}>
+                  Get in Touch
+                </button>
               </div>
             </div>
           </div>
@@ -109,7 +141,9 @@ export default function Home() {
                 from more senior painters, all to get where she is today - At
                 your party!
               </p>
-              <button className={styles.button} onClick={scrollToForm}>Get in Touch</button>
+              <button className={styles.button} onClick={scrollToForm}>
+                Get in Touch
+              </button>
             </div>
             <div className={styles.aboutRight}>
               <Image
@@ -304,7 +338,9 @@ export default function Home() {
               <h2>Unique Twist</h2>
             </div>
 
-            <button className={styles.button} onClick={scrollToForm}>Get in Touch</button>
+            <button className={styles.button} onClick={scrollToForm}>
+              Get in Touch
+            </button>
           </div>
         </div>
 
@@ -317,54 +353,81 @@ export default function Home() {
             </p>
           </div>
 
-          <form className={styles.form} id="contact-form">
-            <div className={styles.formContainer}>
-              <div className={styles.formLeft}>
-                <input
-                  type="text"
-                  placeholder="Name"
-                  className={styles.formInput}
-                />
-                <input
-                  type="text"
-                  placeholder="Phone"
-                  className={styles.formInput}
-                />
-                <input type="date" className={styles.formInput} />
-                <label htmlFor="availability">What type of event is it?</label>
-                <input
-                  type="text"
-                  placeholder="Event Type"
-                  className={styles.formInput}
-                />
-              </div>
-              <div className={styles.formRight}>
-                <input
-                  type="text"
-                  placeholder="Email"
-                  className={styles.formInput}
-                />
-                <input
-                  type="text"
-                  placeholder="Neighborhood or town"
-                  className={styles.formInput}
-                />
-                <input type="time" className={styles.formInput} />
-
-                <label htmlFor="availability">Is it OK to Text?</label>
-                <select id="availability" className={styles.formInput}>
-                  <option value="Yes">Yes</option>
-                  <option value="No">No</option>
-                </select>
-              </div>
-            </div>
-            <textarea
-              className={styles.formTextArea}
-              placeholder="Message"
-            ></textarea>
-          </form>
-
-          <button className={styles.otherButton}>Get in touch</button>
+          <form className={styles.form} id="contact-form" onSubmit={handleSubmit}>
+      <div className={styles.formContainer}>
+        <div className={styles.formLeft}>
+          <input
+            type="text"
+            placeholder="Name"
+            className={styles.formInput}
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+          <input
+            type="text"
+            placeholder="Phone"
+            className={styles.formInput}
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
+          />
+          <input
+            type="date"
+            className={styles.formInput}
+            value={date}
+            onChange={(e) => setDate(e.target.value)}
+          />
+          <label htmlFor="eventType">What type of event is it?</label>
+          <input
+            type="text"
+            placeholder="Event Type"
+            className={styles.formInput}
+            value={eventType}
+            onChange={(e) => setEventType(e.target.value)}
+          />
+        </div>
+        <div className={styles.formRight}>
+          <input
+            type="text"
+            placeholder="Email"
+            className={styles.formInput}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <input
+            type="text"
+            placeholder="Neighborhood or town"
+            className={styles.formInput}
+            value={location}
+            onChange={(e) => setLocation(e.target.value)}
+          />
+          <input
+            type="time"
+            className={styles.formInput}
+            value={time}
+            onChange={(e) => setTime(e.target.value)}
+          />
+          <label htmlFor="textOk">Is it OK to Text?</label>
+          <select
+            id="textOk"
+            className={styles.formInput}
+            value={textOk}
+            onChange={(e) => setTextOk(e.target.value)}
+          >
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
+        </div>
+      </div>
+      <textarea
+        className={styles.formTextArea}
+        placeholder="Message"
+        value={message}
+        onChange={(e) => setMessage(e.target.value)}
+      ></textarea>
+      <button className={styles.otherButton} type="submit">
+        Get in touch
+      </button>
+    </form>
         </div>
       </main>
       <div className={styles.footer}>
