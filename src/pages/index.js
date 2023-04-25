@@ -209,7 +209,7 @@ export default function Home() {
 
         <div className={styles.blueSection}>
           <div className={styles.reviewSection}>
-          <h1 className={styles.reviewsHeader}>Reviews</h1>
+            <h1 className={styles.reviewsHeader}>Reviews</h1>
             <div className={styles.reviews}>
               <div className={styles.reviewsLeft}>
                 <div className={styles.reviewBox}>
@@ -310,7 +310,7 @@ export default function Home() {
             </p>
           </div>
 
-          <form>
+          <form className={styles.form}>
             <div className={styles.formContainer}>
               <div className={styles.formLeft}>
                 <input
@@ -324,6 +324,7 @@ export default function Home() {
                   className={styles.formInput}
                 />
                 <input type="date" className={styles.formInput} />
+                <label htmlFor="availability">What type of event is it?</label>
                 <input
                   type="text"
                   placeholder="Event Type"
@@ -342,7 +343,9 @@ export default function Home() {
                   className={styles.formInput}
                 />
                 <input type="time" className={styles.formInput} />
-                <select className={styles.formInput}>
+
+                <label htmlFor="availability">Is it OK to Text?</label>
+                <select id="availability" className={styles.formInput}>
                   <option value="Yes">Yes</option>
                   <option value="No">No</option>
                 </select>

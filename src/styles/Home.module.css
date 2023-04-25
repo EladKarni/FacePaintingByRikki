@@ -375,7 +375,6 @@
     height: 100%;
     justify-content: flex-start; /* change to flex-start to align header and boxes at the top */
     align-items: center;
-    
   }
 
   .reviewsHeader {
@@ -456,14 +455,19 @@
 .formHeader {
   text-align: center;
   padding: 20px;
+  width: 100%;
+}
+
+.form{
+  width: 90%;
 }
 
 .formContainer {
+  width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  width: 100%;
   margin-top: 20px;
   margin-bottom: 20px;
 }
@@ -472,29 +476,68 @@
   display: flex;
   flex-direction: column;
   margin: 10px;
+  width: 50%;
 }
 
 .formRight {
   display: flex;
   flex-direction: column;
   margin: 10px;
+  width: 50%;
 }
 
 .formInput {
   border-radius: 10px;
   align-self: center;
+  padding: 5px;
   background-color: white;
   color: grey;
   margin: 5px;
+  width: 100%;
 }
 
 .formTextArea {
   border-radius: 10px;
+  padding: 5px;
   align-self: center;
   background-color: white;
   color: grey;
   width: 100%;
   margin: 5px;
+}
+
+@media only screen and (max-width: 738px) {
+  .form{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .formContainer {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .formLeft{
+    margin: 0;
+    width: 100%;
+  }
+  .formRight{
+    margin: 0;
+    width: 100%;
+  }
+  .formTextArea {
+    border-radius: 10px;
+    padding: 5px;
+    align-self: center;
+    background-color: white;
+    color: grey;
+    width: 100%;
+    
+  }
+  
 }
 
 .footer {
