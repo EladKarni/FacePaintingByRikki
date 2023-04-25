@@ -28,7 +28,6 @@
   .videoContainer::after {
   z-index: 1;
   content: "";
-  z-index: 1;
   position: absolute;
   left: 0;
   bottom: 0;
@@ -67,7 +66,7 @@
   
   .pinkSection {
   position: relative;
-  background-image: linear-gradient(to top, rgba(222, 104, 214, 0.87), rgba(255, 255, 255, 0)), url("https://your-image-url-here.com");
+  background-image: linear-gradient(to top, rgba(222, 104, 214, 0.87), rgba(255, 255, 255, 0));
   background-color: #de68d6df;
   background-repeat: no-repeat;
   background-size: cover;
@@ -79,7 +78,7 @@
   }
   
   .packages {
-  padding-top: 20;
+  padding-top: 20px;
   margin: 0 auto;
   margin-bottom: 70px;
   width: 90%;
@@ -109,16 +108,19 @@
   }
   
   .packageBox {
-  display: flex;
-  height: 100%;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-  border-style: solid;
-  border-width: 0.0000001px;
-  border-color: rgb(255, 255, 255);
+    display: flex;
+    height: 100%;
+    word-wrap: none;
+    white-space: nowrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-style: solid;
+    border-width: 0.0000001px;
+    border-color: rgb(255, 255, 255);
   }
+  
   
   @media (max-width: 768px) {
   .packages {
