@@ -314,20 +314,6 @@
   max-width: 100%;
   height: auto;
 }
-
-.blueSection {
-  height: 200vh;
-  position: relative;
-  display: flex;
-  width: 100%;
-  padding: 20px;
-  justify-content: center;
-  align-items: center;
-  align-items: center;
-  flex-direction: column;
-  background-color: rgba(16, 165, 215, 0.486);
-}
-
 .otherButton {
   border-radius: 20px;
   background-color: #89cff0;
@@ -340,8 +326,21 @@
   flex-direction: row;
 }
 
+.blueSection {
+  height: 200vh;
+  position: relative;
+  display: flex;
+  width: 100%;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #89cff0;
+}
+
 .reviewSection {
-  height: 100vh;
+  height: 150vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -349,31 +348,52 @@
 }
 
 .reviews {
-  width: 90%;
+  width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.reviewsLeft {
-  height: 50%;
-}
-
-.reviewRight {
-  height: 50%;
-}
-
 .reviewBox {
   display: flex;
-  height: 50%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 10px;
+  height: 30vh;
   border-style: solid;
+  padding: 20px;
   border-width: 0.0000001px;
   border-color: rgb(255, 255, 255);
+  word-wrap: break-word;
+}
+
+@media only screen and (max-width: 768px) {
+  .reviews {
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    justify-content: flex-start; /* change to flex-start to align header and boxes at the top */
+    align-items: center;
+    
+  }
+
+  .reviewsHeader {
+    display: block; /* ensure header is visible */
+  }
+
+  .reviewBox {
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(255, 255, 255);
+    word-wrap: break-word;
+  }
 }
 
 @media (max-width: 768px) {
@@ -395,10 +415,12 @@
 }
 
 .bookNow {
-  height: 100vh;
+  height: 150vh;
   width: 100%;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  height: 100vh;
+  align-content: center;
   text-align: center;
 }
 

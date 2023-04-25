@@ -209,7 +209,7 @@ export default function Home() {
 
         <div className={styles.blueSection}>
           <div className={styles.reviewSection}>
-            <h1>Reviews</h1>
+          <h1 className={styles.reviewsHeader}>Reviews</h1>
             <div className={styles.reviews}>
               <div className={styles.reviewsLeft}>
                 <div className={styles.reviewBox}>
