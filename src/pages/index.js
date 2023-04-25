@@ -12,6 +12,13 @@ import { BsFacebook, BsTwitter, BsYoutube, BsGoogle } from "react-icons/bs";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+
+  function scrollToForm() {
+    const form = document.querySelector('#contact-form');
+    form.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  
   return (
     <>
       <Head>
@@ -52,7 +59,7 @@ export default function Home() {
                 Get Ready to take your costume to a whole new level with these
                 spooky, simple, and unique face paint ideas.
               </p>
-              <button className={styles.button}>Get in Touch</button>
+              <button className={styles.button} onClick={scrollToForm}>Get in Touch</button>
             </div>
           </div>
         </div>
@@ -67,13 +74,13 @@ export default function Home() {
               <div className={styles.packageBox}>
                 <h1>Full Designs</h1>
                 <p>10-15 Guests per hour</p>
-                <button className={styles.button}>Get in Touch</button>
+                <button className={styles.button} onClick={scrollToForm}>Get in Touch</button>
               </div>
 
               <div className={styles.packageBox}>
                 <h1>Holiday Designs</h1>
                 <p>We are open for all holidays</p>
-                <button className={styles.button}>Get in Touch</button>
+                <button className={styles.button} onClick={scrollToForm}>Get in Touch</button>
               </div>
             </div>
 
@@ -81,13 +88,13 @@ export default function Home() {
               <div className={styles.packageBox}>
                 <h1>Quick Draw Designs</h1>
                 <p>24-40 Guests per hour</p>
-                <button className={styles.button}>Get in Touch</button>
+                <button className={styles.button} onClick={scrollToForm}>Get in Touch</button>
               </div>
 
               <div className={styles.packageBox}>
                 <h1>Glitter Tattoos</h1>
                 <p>10-20 Guests per hour (surcharge)</p>
-                <button className={styles.button}>Get in Touch</button>
+                <button className={styles.button} onClick={scrollToForm}>Get in Touch</button>
               </div>
             </div>
           </div>
@@ -102,7 +109,7 @@ export default function Home() {
                 from more senior painters, all to get where she is today - At
                 your party!
               </p>
-              <button className={styles.button}>Get in Touch</button>
+              <button className={styles.button} onClick={scrollToForm}>Get in Touch</button>
             </div>
             <div className={styles.aboutRight}>
               <Image
@@ -297,7 +304,7 @@ export default function Home() {
               <h2>Unique Twist</h2>
             </div>
 
-            <button className={styles.button}>Get in Touch</button>
+            <button className={styles.button} onClick={scrollToForm}>Get in Touch</button>
           </div>
         </div>
 
@@ -310,7 +317,7 @@ export default function Home() {
             </p>
           </div>
 
-          <form className={styles.form}>
+          <form className={styles.form} id="contact-form">
             <div className={styles.formContainer}>
               <div className={styles.formLeft}>
                 <input

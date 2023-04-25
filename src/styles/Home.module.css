@@ -542,34 +542,41 @@
 
 .footer {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  align-items: center;
   background-color: #de68d6df;
-  border-top: white;
-  width: fill;
-  border-top-width: 1px;
-  border-top-style: solid;
+  border-top: 1px solid white;
+  height: 100px;
+  padding: 0 20px;
 }
 
 .bottomIcon {
   background-color: babyblue;
   border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  font-size: 10px;
+  color: white;
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: 50px;
-  height: 50px;
-  font-size: 24px;
-  color: white;
 }
+.bottomIcon:not(:last-child) {
+  margin-right: 10px;
+}
+
 
 .iconContainer {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  justify-items: space-between;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%;
+  width: 75%;
 }
 
 .logo {
+  margin: 10px;
   background: transparent;
 }
+
