@@ -1,19 +1,18 @@
 import Head from "next/head";
-import React, {useState} from "react";
-import { Inter } from "@next/font/google";
+import React, { useState } from "react";
 import styles from "@/styles/Home.module.css";
-import Accordion from "react-bootstrap/Accordion";
-import Image from "next/image";
-import facepaint from "../Assets/facepaint.jpg";
-import profile from "../Assets/profilepic.jpeg";
-import google from "../Assets/icon-google-reviews.png";
-import logo from "../Assets/logo.png";
-import { BsFacebook, BsTwitter, BsYoutube, BsGoogle } from "react-icons/bs";
-
-const inter = Inter({ subsets: ["latin"] });
+import Footer from "@/Components/Footer";
+import HeroSection from "@/Components/HeroSection";
+import ContentSection from "@/Layouts/ContentSection";
+import Packages from "@/Components/Packages";
+import AboutSection from "@/Components/AboutSection";
+import BookNow from "@/Components/BookNow";
+import Commitment from "@/Components/Commitment";
+import QASection from "@/Components/QASection";
+import Reviews from "@/Components/Reviews";
 
 export default function Home() {
-  function scrollToForm() {
+  const scrollToForm = () => {
     const form = document.querySelector("#contact-form");
     form.scrollIntoView({ behavior: "smooth" });
   }
@@ -49,302 +48,26 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      
       <main className={styles.main}>
-        <div className={styles.top}>
-          <div className={styles.videoContainer}>
-            <video
-              loop
-              autoPlay
-              muted
-              style={{
-                position: "absolute",
-                opacity: "80%",
-                width: "100%",
-                height: "100%",
-                left: 0,
-                top: 0,
+        <HeroSection scroll={scrollToForm} />
+        <ContentSection topColor="#de68d6" bottomColor="#de68d6">
+          <BookNow scroll={scrollToForm} />
+          <Packages scroll={scrollToForm}/>
+        </ContentSection>
+        <ContentSection topColor="#de68d6" bottomColor="blue">
+          <AboutSection scroll={scrollToForm} />
+          <Commitment />
+          <QASection />
+        </ContentSection>
 
-                objectFit: "cover",
-              }}
-            >
-              <source
-                src={
-                  "https://media.istockphoto.com/id/1152176721/video/face-painting-session.mp4?s=mp4-640x640-is&k=20&c=kM_p8bkmL4zerM9HmG9Ms4Evs1Wf1-31wJmkz836cso="
-                }
-                type="video/mp4"
-              />
-            </video>
-            <div className={styles.topContentContainer}>
-              <Image src={logo} width={200} height={200}></Image>
-              <h1> Face Painting By Rikki</h1>
-              <p>
-                Get Ready to take your costume to a whole new level with these
-                spooky, simple, and unique face paint ideas.
-              </p>
-              <button className={styles.button} onClick={scrollToForm}>
-                Get in Touch
-              </button>
-            </div>
-          </div>
-        </div>
 
-        <div className={styles.pinkSection}>
-          <div className={styles.packages}>
-            <div className={styles.packagesLeft}>
-              <h1>Our Packages</h1>
-            </div>
+        <ContentSection topColor="blue" bottomColor="#de68d6">
+          <Reviews />
+        </ContentSection>
 
-            <div className={styles.packagesCenter}>
-              <div className={styles.packageBox}>
-                <h1>Full Designs</h1>
-                <p>10-15 Guests per hour</p>
-                <button className={styles.button} onClick={scrollToForm}>
-                  Get in Touch
-                </button>
-              </div>
 
-              <div className={styles.packageBox}>
-                <h1>Holiday Designs</h1>
-                <p>We are open for all holidays</p>
-                <button className={styles.button} onClick={scrollToForm}>
-                  Get in Touch
-                </button>
-              </div>
-            </div>
-
-            <div className={styles.packagesRight}>
-              <div className={styles.packageBox}>
-                <h1>Quick Draw Designs</h1>
-                <p>24-40 Guests per hour</p>
-                <button className={styles.button} onClick={scrollToForm}>
-                  Get in Touch
-                </button>
-              </div>
-
-              <div className={styles.packageBox}>
-                <h1>Glitter Tattoos</h1>
-                <p>10-20 Guests per hour (surcharge)</p>
-                <button className={styles.button} onClick={scrollToForm}>
-                  Get in Touch
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div className={styles.about}>
-            <div className={styles.aboutLeft}>
-              <h1>About Rikki</h1>
-              <p>
-                Rikki began painting faces in 2011 after a friend correctly
-                guessed, "I bet you'd really like face painting!" Since then,
-                Rikki has taken classes, attended painting jams, and learned
-                from more senior painters, all to get where she is today - At
-                your party!
-              </p>
-              <button className={styles.button} onClick={scrollToForm}>
-                Get in Touch
-              </button>
-            </div>
-            <div className={styles.aboutRight}>
-              <Image
-                src={facepaint}
-                className={styles.image}
-                height={400}
-                width={400}
-              ></Image>
-            </div>
-          </div>
-
-          <div className={styles.commitment}>
-            <h1 className={styles.commitmentHeader}>
-              Our Commitment to Safety
-            </h1>
-            <p>
-              Face painting by Rikki staff including Rikki and all artists all
-              have squeaky clean background checks on file, for you and your
-              guests peace of mind. We use industry standard face and body
-              paints whiche are hypoallergenic and includ anti-bacterial agents.
-              Each painter carriers liability insurance because it's good to be
-              safe. If you have any questions or for more info, please ask.
-            </p>
-          </div>
-        </div>
-
-        <div className={styles.yellowSection}>
-          <div className={styles.questions}>
-            <h1>FAQS</h1>
-            <Accordion className={styles.accordion}>
-              <Accordion.Item eventKey="0">
-                <Accordion.Header>
-                  What kinds of paints do you use?
-                </Accordion.Header>
-                <Accordion.Body>
-                  Rikki and her artists use high-quality industry standard face
-                  abd body paints which are hypoallergenic and include
-                  antobacterial agents. If a guest has very sensitive skin,
-                  please ask for a swatch test at the beginning of the event
-                </Accordion.Body>
-              </Accordion.Item>
-              <Accordion.Item eventKey="1">
-                <Accordion.Header>Who is coming to paint?</Accordion.Header>
-                <Accordion.Body>
-                  Rikki is the lead painter, and she has a small stable of
-                  painters hand picked who work up to her standards. You will
-                  know who your painter is before your event
-                </Accordion.Body>
-              </Accordion.Item>
-              <Accordion.Item eventKey="2">
-                <Accordion.Header>How much does it cost?</Accordion.Header>
-                <Accordion.Body>
-                  Due to the many details involved in the event entertainment,
-                  individual quoptes are provided for each client. Please
-                  contact Rikki using the form below for your quote.
-                </Accordion.Body>
-              </Accordion.Item>
-            </Accordion>
-          </div>
-
-          <div className={styles.gallery}>
-            <h1>Gallery</h1>
-
-            <div className={styles.photos}>
-              <div>
-                <Image
-                  src={facepaint}
-                  width={200}
-                  height={200}
-                  className={styles.galleryImage}
-                  sizes="(max-width: 768px) 100vw,
-              (max-width: 1200px) 50vw,
-              33vw"
-                ></Image>
-              </div>
-
-              <div>
-                <Image
-                  src={facepaint}
-                  width={200}
-                  height={200}
-                  className={styles.galleryImage}
-                  sizes="(max-width: 768px) 100vw,
-              (max-width: 1200px) 50vw,
-              33vw"
-                ></Image>
-              </div>
-
-              <div>
-                <Image
-                  src={facepaint}
-                  width={200}
-                  height={200}
-                  className={styles.galleryImage}
-                  sizes="(max-width: 768px) 100vw,
-              (max-width: 1200px) 50vw,
-              33vw"
-                ></Image>
-              </div>
-            </div>
-            <button className={styles.button}>View more</button>
-          </div>
-        </div>
-
-        <div className={styles.blueSection}>
-          <div className={styles.reviewSection}>
-            <h1 className={styles.reviewsHeader}>Reviews</h1>
-            <div className={styles.reviews}>
-              <div className={styles.reviewsLeft}>
-                <div className={styles.reviewBox}>
-                  <Image src={google} height={50}></Image>
-                  <h2>Top Rated!</h2>
-
-                  <button className={styles.otherButton}>
-                    <BsGoogle /> Add a review
-                  </button>
-                </div>
-                <div className={styles.reviewBox}>
-                  <p>
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                    sed do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi u"
-                  </p>
-                  <div className={styles.profileContainer}>
-                    <Image
-                      src={profile}
-                      width={50}
-                      height={50}
-                      className={styles.galleryImage}
-                      sizes="(max-width: 768px) 100vw,
-              (max-width: 1200px) 50vw,
-              33vw"
-                    ></Image>
-                    <p>client name</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className={styles.reviewRight}>
-                <div className={styles.reviewBox}>
-                  <p>
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                    sed do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi u"
-                  </p>
-                  <div className={styles.profileContainer}>
-                    <Image
-                      src={profile}
-                      width={50}
-                      height={50}
-                      className={styles.galleryImage}
-                      sizes="(max-width: 768px) 100vw,
-              (max-width: 1200px) 50vw,
-              33vw"
-                    ></Image>
-                    <p>client name</p>
-                  </div>
-                </div>
-
-                <div className={styles.reviewBox}>
-                  <p>
-                    " Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                    sed do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi u"
-                  </p>
-                  <div className={styles.profileContainer}>
-                    <Image
-                      src={profile}
-                      width={50}
-                      height={50}
-                      className={styles.galleryImage}
-                      sizes="(max-width: 768px) 100vw,
-              (max-width: 1200px) 50vw,
-              33vw"
-                    ></Image>
-                    <p>client name</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className={styles.bookNow}>
-            <h1>Book Now</h1>
-
-            <div className={styles.bookNowRow}>
-              <h2>Parties</h2>
-              <h2>Sports Events</h2>
-              <h2>Unique Twist</h2>
-            </div>
-
-            <button className={styles.button} onClick={scrollToForm}>
-              Get in Touch
-            </button>
-          </div>
-        </div>
-
-        <div className={styles.pinkSection2}>
+        <ContentSection topColor="#de68d6" bottomColor="blue">
           <div className={styles.formHeader}>
             <h1>Get In Touch</h1>
             <p>
@@ -354,90 +77,83 @@ export default function Home() {
           </div>
 
           <form className={styles.form} id="contact-form" onSubmit={handleSubmit}>
-      <div className={styles.formContainer}>
-        <div className={styles.formLeft}>
-          <input
-            type="text"
-            placeholder="Name"
-            className={styles.formInput}
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-          <input
-            type="text"
-            placeholder="Phone"
-            className={styles.formInput}
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)}
-          />
-          <input
-            type="date"
-            className={styles.formInput}
-            value={date}
-            onChange={(e) => setDate(e.target.value)}
-          />
-          <label htmlFor="eventType">What type of event is it?</label>
-          <input
-            type="text"
-            placeholder="Event Type"
-            className={styles.formInput}
-            value={eventType}
-            onChange={(e) => setEventType(e.target.value)}
-          />
-        </div>
-        <div className={styles.formRight}>
-          <input
-            type="text"
-            placeholder="Email"
-            className={styles.formInput}
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <input
-            type="text"
-            placeholder="Neighborhood or town"
-            className={styles.formInput}
-            value={location}
-            onChange={(e) => setLocation(e.target.value)}
-          />
-          <input
-            type="time"
-            className={styles.formInput}
-            value={time}
-            onChange={(e) => setTime(e.target.value)}
-          />
-          <label htmlFor="textOk">Is it OK to Text?</label>
-          <select
-            id="textOk"
-            className={styles.formInput}
-            value={textOk}
-            onChange={(e) => setTextOk(e.target.value)}
-          >
-            <option value="Yes">Yes</option>
-            <option value="No">No</option>
-          </select>
-        </div>
-      </div>
-      <textarea
-        className={styles.formTextArea}
-        placeholder="Message"
-        value={message}
-        onChange={(e) => setMessage(e.target.value)}
-      ></textarea>
-      <button className={styles.otherButton} type="submit">
-        Get in touch
-      </button>
-    </form>
-        </div>
+            <div className={styles.formContainer}>
+              <div className={styles.formLeft}>
+                <input
+                  type="text"
+                  placeholder="Name"
+                  className={styles.formInput}
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                />
+                <input
+                  type="text"
+                  placeholder="Phone"
+                  className={styles.formInput}
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                />
+                <input
+                  type="date"
+                  className={styles.formInput}
+                  value={date}
+                  onChange={(e) => setDate(e.target.value)}
+                />
+                <label htmlFor="eventType">What type of event is it?</label>
+                <input
+                  type="text"
+                  placeholder="Event Type"
+                  className={styles.formInput}
+                  value={eventType}
+                  onChange={(e) => setEventType(e.target.value)}
+                />
+              </div>
+              <div className={styles.formRight}>
+                <input
+                  type="text"
+                  placeholder="Email"
+                  className={styles.formInput}
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+                <input
+                  type="text"
+                  placeholder="Neighborhood or town"
+                  className={styles.formInput}
+                  value={location}
+                  onChange={(e) => setLocation(e.target.value)}
+                />
+                <input
+                  type="time"
+                  className={styles.formInput}
+                  value={time}
+                  onChange={(e) => setTime(e.target.value)}
+                />
+                <label htmlFor="textOk">Is it OK to Text?</label>
+                <select
+                  id="textOk"
+                  className={styles.formInput}
+                  value={textOk}
+                  onChange={(e) => setTextOk(e.target.value)}
+                >
+                  <option value="Yes">Yes</option>
+                  <option value="No">No</option>
+                </select>
+              </div>
+            </div>
+            <textarea
+              className={styles.formTextArea}
+              placeholder="Message"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+            ></textarea>
+            <button className={styles.otherButton} type="submit">
+              Get in touch
+            </button>
+          </form>
+          </ContentSection>
       </main>
-      <div className={styles.footer}>
-        <p>Copyright 2021 Face Painting By Rikki </p>
-        <div className={styles.iconContainer}>
-          <BsFacebook className={styles.bottomIcon} />
-          <BsTwitter className={styles.bottomIcon} />
-          <BsYoutube className={styles.bottomIcon} />
-        </div>
-      </div>
+      <Footer />
     </>
   );
 }

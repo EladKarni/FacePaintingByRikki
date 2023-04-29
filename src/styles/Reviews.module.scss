@@ -1,0 +1,36 @@
+.reviewSection {
+    height: 150vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.reviews {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.reviewBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
+    border-style: solid;
+    padding: 20px;
+    border-width: 0.0000001px;
+    border-color: rgb(255, 255, 255);
+    word-wrap: break-word;
+}
+
+.galleryImage {
+    border-radius: 100px;
+    border-style: solid;
+    max-width: 100%;
+    height: auto;
+}

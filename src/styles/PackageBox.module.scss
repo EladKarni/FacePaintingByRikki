@@ -1,0 +1,13 @@
+.packageBox {
+    display: flex;
+    height: 100%;
+    word-wrap: none;
+    white-space: nowrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-style: solid;
+    border-width: 0.0000001px;
+    border-color: rgb(255, 255, 255);
+}
